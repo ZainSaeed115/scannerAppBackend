@@ -8,7 +8,11 @@ import "dotenv/config"
 const app = express();
 const port=process.env.PORT||5000
 // Middleware
-app.use(cors());
+app.use(cors(
+  {
+    origin:['https://sacnner-app-frontend.vercel.app','http://localhost:5173']
+  }
+));
 app.use(bodyParser.json());
 
 // Routes
